@@ -3,7 +3,7 @@
 <mapper namespace="com.wenqiao.mapper.UserMapper">
 
 
-    <select id="selectUser" resultType="com.wenqiao.entities.User">
+    <select id="selectUser11" resultType="com.wenqiao.entities.User">
                 select * from user
             <where>
                 <if test="username != null and username != '' ">

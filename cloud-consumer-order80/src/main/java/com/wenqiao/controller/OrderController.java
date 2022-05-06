@@ -5,6 +5,7 @@ import com.wenqiao.common.CommonListResult;
 
 import com.wenqiao.entities.User;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -22,7 +23,8 @@ import javax.annotation.Resource;
 @RequestMapping("/order")
 @Slf4j
 public class OrderController {
-    private static final String url = "http://localhost:8001/user/selectUserList";
+//    private static final String url = "http://localhost:8001/user/selectUserList";//单机
+    private static final String url = "http://cloud-payment-service/user/selectUserList";//集群
     @Resource
     private RestTemplate restTemplate;
 
