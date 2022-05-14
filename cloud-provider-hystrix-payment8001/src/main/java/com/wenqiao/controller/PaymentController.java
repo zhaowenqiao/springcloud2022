@@ -1,7 +1,7 @@
 package com.wenqiao.controller;
 
 import com.alibaba.fastjson.JSONObject;
-
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.wenqiao.common.CommonResult;
 import com.wenqiao.dto.FileDTO;
 import com.wenqiao.entities.User;
@@ -81,4 +81,22 @@ public class PaymentController {
         file.transferTo(new File(filePath+fileName));
         return new CommonResult("200","处理成功");
     }
+
+
+    /**
+     * 服务熔断
+     * http://localhost:8001/payment/circuit/1
+     *
+     * @param id
+     * @return
+     */
+    @PostMapping("/circuit/{id}")
+    @HystrixCommand
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String result = paymentService.paymentCircuitBreaker(id);
+        log.info("***result:" + result);
+        return result;
+    }
+
+
 }

@@ -1,0 +1,6 @@
+server:
+  port: 1111
+
+spring:
+  application:
+    name: cloud-poi #服务名称

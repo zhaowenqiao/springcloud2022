@@ -7,6 +7,12 @@
     <groupId>com.wenqiao</groupId>
     <artifactId>springcloud2022</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
     <packaging>pom</packaging>
     <name>Maven</name>
 
@@ -22,6 +28,8 @@
         <module>cloud-consumerconsul-order80</module>
         <module>cloud-provider-hystrix-payment8001</module>
         <module>cloud-consumer-feign-hystrix-order80</module>
+        <module>cloud-poi</module>
+        <module>cloud-mypoi</module>
     </modules>
 
     <!--统一管理jar包和版本-->
