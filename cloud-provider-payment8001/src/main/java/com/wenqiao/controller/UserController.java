@@ -2,6 +2,7 @@ package com.wenqiao.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.wenqiao.common.CommonListResult;
+import com.wenqiao.common.CommonResult;
 import com.wenqiao.entities.User;
 import com.wenqiao.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -31,5 +32,10 @@ public class UserController {
             e.printStackTrace();
         }
         return new CommonListResult("200",port + "处理成功",userList);
+    }
+
+    @PostMapping("/getHello")
+    public CommonResult create() {
+        return new CommonResult("200",port + "处理成功","HelloWorld");
     }
 }
