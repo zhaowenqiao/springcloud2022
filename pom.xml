@@ -31,6 +31,7 @@
         <module>cloud-mypoi</module>
         <module>cloud-gateway-gateway9527</module>
         <module>cloud-config-center3344</module>
+        <module>rocketmq-demo</module>
     </modules>
 
     <!--统一管理jar包和版本-->
